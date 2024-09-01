@@ -1,4 +1,4 @@
-const User = require("../models/User").default;
+const User = require("../models/User");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 
@@ -30,6 +30,7 @@ exports.register = async (req, res) => {
     );
   } catch (err) {
     res.status(500).json({ message: "Server error" });
+    console.error("Error occurred during user registration:", err.message);
   }
 };
 

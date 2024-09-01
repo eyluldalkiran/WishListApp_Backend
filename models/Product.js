@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 const ProductSchema = new mongoose.Schema({
   userId: {
@@ -22,4 +22,5 @@ const ProductSchema = new mongoose.Schema({
     default: Date.now,
   },
 });
+
 module.exports = mongoose.model("Product", ProductSchema);
